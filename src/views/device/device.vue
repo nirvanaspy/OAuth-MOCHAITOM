@@ -82,12 +82,12 @@
               远程
             </el-button>
           </router-link>-->
-          <el-button size="mini" type="warning" v-if="!scope.row.virtual && scope.row.online" @click="handleRouter(scope.row)">
-            远程
-          </el-button>
+          <!--<el-button size="mini" type="warning" v-if="!scope.row.virtual && scope.row.online" @click="handleRouter(scope.row)">-->
+            <!--远程-->
+          <!--</el-button>-->
           <el-button type="primary" disabled="disabled" v-if="!scope.row.online || scope.row.virtual" size="mini">{{$t('table.deviceProcess')}}</el-button>
           <el-button size="mini" disabled="disabled" v-if="!scope.row.online || scope.row.virtual" type="success">{{$t('table.disk')}}</el-button>
-          <el-button type="warning" disabled="disabled" v-if="!scope.row.online || scope.row.virtual" size="mini">远程</el-button>
+          <!--<el-button type="warning" disabled="disabled" v-if="!scope.row.online || scope.row.virtual" size="mini">远程</el-button>-->
         </template>
       </el-table-column>
       <el-table-column align="center" :label="$t('table.actions')" width="140" class-name="small-padding fixed-width">
@@ -248,7 +248,7 @@
     <el-dialog title="进程" :visible.sync="processDialogVisible" class="processDialog">
       <el-table :key='tableKey' :data="taskprocess" v-loading="listLoading" element-loading-text="给我一点时间" border fit highlight-current-row
                 stripe
-                height="500"
+                height="85%"
                 style="width: 100%;"
                 @selection-change="handleCheckedProcess">
         <!-- <el-table :data="list" row-key="id"  v-loading.body="listLoading" border fit highlight-current-row style="width: 100%">-->
@@ -269,7 +269,7 @@
           </template>
         </el-table-column>
       </el-table>
-      <div slot="footer" class="dialog-footer">
+      <div style="position: absolute;bottom: 10px;right:20px;">
         <el-button @click="processDialogVisible = false">{{$t('table.cancel')}}</el-button>
         <el-button type="primary" @click="compMonitor()">组件进程监控</el-button>
       </div>
