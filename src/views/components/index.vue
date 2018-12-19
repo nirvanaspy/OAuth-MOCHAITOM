@@ -11,7 +11,6 @@
                  @click="handleCreate" type="primary"
                  icon="el-icon-edit">{{$t('table.add')}}
       </el-button>
-
       <!--<router-link to="/componentTypes/index">
         <el-button class="filter-item pull-right" style="float: right;margin-left: 10px;" type="primary"
                    icon="el-icon-edit">组件分类
